@@ -42,18 +42,14 @@
         }
 
     const taskClickHandler = function (event) {
-    // Verifique se o elemento clicado ou seus pais têm a classe desejada
         if (event.target.closest('.task')) {
-            // Obtenha o ID da tarefa do elemento clicado
             let taskId = event.target.closest('.task').dataset.taskId;
 
-            // Chame a função para alterar o status
             alterarstatus(taskId);
             reload()
         }
     };
 
-    // Adicione o ouvinte de evento novamente
     document.addEventListener('click', taskClickHandler);
     
     document.addEventListener('DOMContentLoaded', reload);
