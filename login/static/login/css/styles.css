@@ -1,0 +1,75 @@
+html, body{
+    height: 100%;
+}
+body{
+    display: flex;
+    background-color: rgb(179, 182, 179);
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30%;
+    width: 20%;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+.create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 20%;
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+}
+
+input, button{
+    display: block;
+    height: 2em;
+    width: 15em;
+    font-size: 20px;
+    box-sizing: border-box;
+    border: 0px;
+    margin-top: 5%;
+}
+
+input{
+    padding-left: 10px;
+    background-color: rgb(177, 171, 171);
+}
+
+button{
+    background-color: green;
+    color: white;
+}
+
+p{
+    display: flex;
+    margin: 0;
+    justify-content: right;
+    font-size: 15px;
+}
+
+a{
+    text-decoration: none;
+    color: green;
+}
+
+button ~ a > p{
+    margin-top: 10px;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    font-family: 'arial';
+}

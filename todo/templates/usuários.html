@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<div class="content-table">
+    <table >
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Grupo</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    function excluirUsuario(id) {
+            fetch(`http://localhost:8000/api/user/${id}`, {
+                method: 'PATCH',
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log(`Usuário com ID ${id} excluído com sucesso.`);
+                    reload()
+                } else {
+                    console.error('Falha ao excluir o usuário.');
+                }
+            })
+            .catch(error => console.error('Erro ao excluir usuário:', error));
+        }
+
+    function reload(){
+        function obterUsuarios() {
+            fetch('http://localhost:8000/api/users')
+                .then(response => response.json())
+                .then(data => exibirUsuarios(data))
+                .catch(error => console.error('Erro ao obter usuários:', error));
+        }
+
+        function exibirUsuarios(usuarios) {
+            const table = document.querySelector('table');
+            const tbody = table.querySelector('tbody');
+
+            tbody.innerHTML = '';
+
+            usuarios.forEach(usuario => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${usuario.username}</td><td>${usuario.email}</td><td>${usuario.group}</td><td><button onclick="excluirUsuario(${usuario.id})">Excluir</button></td>`;
+                tbody.appendChild(tr);
+            });
+        }
+        obterUsuarios();
+    }
+    
+    document.addEventListener('DOMContentLoaded', reload);
+</script>
+{% endblock %}

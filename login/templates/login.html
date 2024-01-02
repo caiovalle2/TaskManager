@@ -1,0 +1,23 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login/css/styles.css' %}">
+    <title>Título da Página</title>
+</head>
+<body>
+    <main>
+        <form action="/api/login" method="post">
+            {% csrf_token %}
+            <input type="text" class="username" placeholder="Usuário" name="username" required>
+            <input type="password" class="password" placeholder="Senha" name="password" required>
+            <a href=""><p>Esqueceu a senha</p></a>
+            <button type="submit">Login</button>
+            <a href="user/create"><p>Criar conta</p></a>
+        </form>
+    </main>
+
+</body>
+</html>

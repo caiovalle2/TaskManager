@@ -1,0 +1,126 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'arial';
+}
+
+body{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+ul{
+    list-style-type: none;
+    display: inline-block;
+}
+
+li{
+    font-size: 20px;
+    padding: 20px 0;
+}
+
+.menu{
+    height: 100%;
+    width: 15%;
+    background-color: rgb(66, 147, 223);
+}
+
+.content{
+    display: flex;
+    height: 100%;
+    flex: 1;
+    background-color: rgb(165, 161, 161);
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    margin-left: 20px;
+}
+
+.container{
+    height: 60%;
+    width: 80%;
+    background-color: white;
+    border-radius: 20px;
+    overflow: auto;
+}
+
+.tasks{
+    height: 100%;
+    width: 100%;
+}
+
+.task{
+    display: inline-block;
+    height: 30%;
+    width: 20%;
+    background-color: black;
+    border-radius: 20px;
+    margin: 20px;
+    color: white;
+    font-size: 15px;
+}
+
+.info{
+    display: flex;
+    width: 100%;
+    height: 20%;
+}
+
+p{
+    margin: 10px 10px;
+}
+
+.description{
+    height: 50%;
+    word-wrap: break-word;
+}
+
+
+.content-table{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    background-color: rgb(165, 161, 161);
+}
+table{
+    border-collapse: collapse;
+    width: 80%;
+    height: 50%;
+    margin: 20px;
+}
+
+
+th, td{
+    border: 1px solid;
+}
+
+td{
+    padding-left: 20px;
+}
+
+main{
+    display: flex;
+    flex:1;
+    background-color: rgb(165, 161, 161);
+}
+
+form{
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+input, button{
+    height: 5%;
+    width: 50%;
+    margin: 10px;
+}
+
+

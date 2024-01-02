@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content%}
+<main>
+    <form action="/api/tasks" method="post">
+        {% csrf_token %}
+        <h1>Criar tarefa</h1>
+        <input type="text" class="name" placeholder="Nome da tarefa" name="name" required>
+        <input type="text" class="description-task" placeholder="Descrição" name="description" required>
+        <input type="date" class="date" placeholder="Data" name="date" required>
+        <button type="submit">Criar</button>
+    </form>
+</main>
+{% endblock %}
